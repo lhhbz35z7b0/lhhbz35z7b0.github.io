@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人人影视官网-人人影视官网下载_字幕资源与客户端使用</title>
+<meta name="description" content="人人影视官网页面说明：介绍人人影视官网的定位与常见访问需求，涵盖字幕资源查找、客户端下载入口、资源分类与使用注意事项，帮助你快速了解人人影视官网的相关信息。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313202c'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23e8534a' stroke-width='4'/%3E%3Cpath d='M14 32h36M32 14v36' stroke='%23f2c14e' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#13202c;
+  --ink-2:#22323f;
+  --paper:#f5f2ec;
+  --card:#ffffff;
+  --line:#dfd8cb;
+  --red:#e8534a;
+  --gold:#c99a2e;
+  --muted:#5c6b77;
+  --shadow:0 10px 30px rgba(19,32,44,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%}
+.wrap{width:min(1120px,92%);margin:0 auto}
+
+/* 页头 */
+header.site{
+  background:var(--ink);
+  color:#f4f1ea;
+  border-bottom:3px solid var(--red);
+  position:sticky;top:0;z-index:20;
+}
+.head-row{display:flex;align-items:center;gap:18px;padding:14px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:.5px}
+.logo .mark{width:38px;height:38px;flex:0 0 38px}
+nav.main{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap;font-size:15px}
+nav.main a{color:#d9d3c6;padding:4px 0;border-bottom:2px solid transparent}
+nav.main a:hover,nav.main a:focus{color:#fff;border-bottom-color:var(--gold)}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(900px 300px at 88% -10%,rgba(232,83,74,.20),transparent 70%),
+    linear-gradient(180deg,#1a2a37 0%,#13202c 100%);
+  color:#f2eee5;
+  padding:56px 0 60px;
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--gold);display:inline-block}
+h1{
+  font-size:clamp(28px,4.2vw,44px);
+  line-height:1.25;
+  margin:0 0 16px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+.hero p.lead{margin:0 0 22px;color:#cfc8ba;font-size:16px;max-width:38em}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:6px;font-size:15px;font-weight:600;
+  border:1px solid transparent;transition:.2s;
+}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#d1443b}
+.btn-ghost{border-color:#4c5a66;color:#e8e2d6}
+.btn-ghost:hover{border-color:var(--gold);color:#fff}
+.btn[aria-disabled="true"]{opacity:.75;cursor:default;pointer-events:none}
+.hero-art{display:flex;justify-content:center}
+.hero-art svg{width:100%;max-width:330px;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+
+/* 通用区块 */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.sec-head h2{font-size:clamp(21px,2.6vw,27px);margin:0;font-weight:800;letter-spacing:.5px}
+.sec-head .sub{margin:6px 0 0;color:var(--muted);font-size:14.5px}
+.sec-head .rule{flex:0 0 60px;height:3px;background:var(--red);border-radius:2px;margin-bottom:8px}
+
+/* 概述 */
+.brief{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.brief article{
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:24px 26px;box-shadow:var(--shadow);
+}
+.brief h3{margin:0 0 10px;font-size:17px;display:flex;align-items:center;gap:9px}
+.brief h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);display:inline-block}
+.brief p{margin:0;color:var(--ink-2);font-size:15px}
+
+/* 卡片网格 */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:24px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;
+  transition:transform .18s,box-shadow .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(19,32,44,.13)}
+.card .ico{width:42px;height:42px;border-radius:9px;background:#fdf0ee;display:flex;align-items:center;justify-content:center}
+.card .ico svg{width:24px;height:24px}
+.card h3{margin:0;font-size:16.5px}
+.card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7}
+.card .tag{font-size:12.5px;color:var(--red);font-weight:600;letter-spacing:.5px}
+
+/* 列表区 */
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}
+.list{background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
+.list .row{display:flex;gap:16px;padding:18px 22px;border-bottom:1px solid #eee8dd}
+.list .row:last-child{border-bottom:0}
+.list .num{flex:0 0 34px;height:34px;border-radius:8px;background:var(--ink);color:#f4d78a;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.list .row h4{margin:0 0 4px;font-size:15.5px}
+.list .row p{margin:0;color:var(--muted);font-size:14px}
+.side{background:var(--ink);color:#e9e3d6;border-radius:10px;padding:26px 24px}
+.side h3{margin:0 0 12px;font-size:17px;color:#fff}
+.side ul{margin:0;padding-left:18px;font-size:14.5px;color:#c6c0b2}
+.side li{margin-bottom:9px}
+.side .note{margin-top:18px;padding-top:16px;border-top:1px solid #33424f;font-size:13.5px;color:#a9b2bb}
+
+/* 问答 */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.faq details{
+  background:var(--card);border:1px solid var(--line);border-radius:9px;padding:16px 20px;
+}
+.faq summary{font-weight:700;font-size:15.5px;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--red);font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:10px 0 0;color:var(--muted);font-size:14.5px}
+
+/* 下载条 */
+.dl{
+  background:linear-gradient(120deg,#1a2a37,#213240 60%,#2a3d4c);
+  color:#f1ece1;border-radius:12px;padding:34px 34px;
+  display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
+}
+.dl h2{margin:0 0 8px;font-size:22px}
+.dl p{margin:0;color:#bfc7ce;font-size:14.5px;max-width:44em}
+
+/* 页尾 */
+footer.site{background:var(--ink);color:#b9c0c7;padding:38px 0 26px;font-size:14px;margin-top:20px}
+.foot-top{display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid #2c3b48}
+.foot-brand{font-weight:700;color:#f1ece1;font-size:16px;display:flex;align-items:center;gap:9px}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-links a:hover{color:#fff}
+.copy{padding-top:18px;color:#8e99a3;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero-grid,.brief,.split,.faq{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr}
+  .hero{padding:40px 0 44px}
+  .hero-art{order:-1;max-width:220px;margin:0 auto}
+}
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr}
+  nav.main{gap:14px;font-size:14px;margin-left:0;width:100%}
+  .head-row{padding:12px 0}
+  section{padding:40px 0}
+  .dl{padding:26px 20px}
+  .brief article,.card{padding:20px 18px}
+  body{font-size:15.5px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-row">
+    <a class="logo" href="#top" aria-label="人人影视官网 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0d1720"/>
+        <circle cx="32" cy="32" r="16" fill="none" stroke="#e8534a" stroke-width="4"/>
+        <path d="M14 32h36M32 14v36" stroke="#c99a2e" stroke-width="2"/>
+        <circle cx="32" cy="32" r="4" fill="#f2c14e"/>
+      </svg>
+      <span>人人影视官网</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#about">官网概述</a>
+      <a href="#catalog">资源分类</a>
+      <a href="#usage">使用说明</a>
+      <a href="#faq">常见问答</a>
+      <a href="#download">客户端下载</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">字幕 · 影视资源 · 客户端</span>
+        <h1>人人影视官网</h1>
+        <p class="lead">人人影视官网长期围绕字幕翻译与影视资源整理提供服务，是不少用户查找中文字幕、了解客户端版本与资源分类时首先想到的入口。本页把官网的定位、常见栏目和访问方式集中说明，便于你按需找到对应内容。</p>
+        <div class="btns">
+          <a class="btn btn-red" href="#catalog">查看资源分类</a>
+          <a class="btn btn-ghost" href="#download">客户端下载</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 320" role="presentation">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8534a"/><stop offset="1" stop-color="#c99a2e"/>
+            </linearGradient>
+          </defs>
+          <circle cx="160" cy="160" r="126" fill="none" stroke="#31475a" stroke-width="2" stroke-dasharray="5 9"/>
+          <circle cx="160" cy="160" r="96" fill="#182936" stroke="#3a5266" stroke-width="2"/>
+          <rect x="92" y="118" width="136" height="86" rx="10" fill="none" stroke="url(#g1)" stroke-width="4"/>
+          <path d="M148 146l30 16-30 16z" fill="#f2c14e"/>
+          <path d="M92 232h136" stroke="#3a5266" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="160" cy="160" r="118" fill="none" stroke="#243642" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>官网概述：人人影视官网做什么</h2>
+          <p class="sub">从字幕到资源，先弄清这个入口承担哪些角色</p>
+        </div>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <div class="brief">
+        <article>
+          <h3><span class="dot" aria-hidden="true"></span>以字幕为核心的资料入口</h3>
+          <p>人人影视官网最被熟知的部分是字幕。访问者多数带着明确需求而来——为一部已看过的剧集补上中文字幕，或在观看前确认某部作品是否有对应语种的字幕文件。官网把字幕与对应的作品信息放在一起，方便按作品名、语种和季集定位。</p>
+        </article>
+        <article>
+          <h3><span class="dot" aria-hidden="true"></span>客户端与资源分类并列</h3>
+          <p>除字幕外，人人影视官网也会说明客户端的情况，并按类型整理影视资源。对于习惯在固定设备上观看的用户，客户端是更省事的通道；而只想临时查找某个条目的用户，则更常使用网页端的分类与检索。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>资源分类：按你需要的内容找</h2>
+          <p class="sub">人人影视官网的常见内容分区，覆盖主要的影视类型</p>
+        </div>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8534a" stroke-width="1.8"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M8 21h8"/></svg>
+          </div>
+          <span class="tag">剧集</span>
+          <h3>欧美剧与亚洲剧</h3>
+          <p>按季、集拆分条目，适合追更与补剧。字幕通常与剧集更新同步整理，查找时优先确认季集编号是否一致。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8534a" stroke-width="1.8"><path d="M4 5h16v14H4z"/><path d="M9 9l6 3-6 3z"/></svg>
+          </div>
+          <span class="tag">电影</span>
+          <h3>院线与经典影片</h3>
+          <p>单片条目信息较集中，常包含片名、年份与字幕语种。同一影片可能有多个版本，注意区分导演剪辑版与公映版。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8534a" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          </div>
+          <span class="tag">纪录</span>
+          <h3>纪录片与专题</h3>
+          <p>纪录片字幕专业词汇多，翻译难度较高。人人影视官网在这类内容上通常提供较完整的字幕文件，适合学习与收藏。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8534a" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <span class="tag">字幕</span>
+          <h3>多语种字幕文件</h3>
+          <p>常见格式为 SRT 与 ASS。下载前先核对帧率与片源版本，否则可能出现时间轴整体偏移，需要手动校准。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8534a" stroke-width="1.8"><path d="M12 3l8 4v6c0 4-3.5 6.5-8 8-4.5-1.5-8-4-8-8V7z"/></svg>
+          </div>
+          <span class="tag">动漫</span>
+          <h3>动画与番剧</h3>
+          <p>番剧更新节奏快，字幕组通常会在播出后数小时内发布。查找时按季度与集数筛选更高效。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8534a" stroke-width="1.8"><path d="M5 4h14v16H5z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+          </div>
+          <span class="tag">合集</span>
+          <h3>系列与专题合集</h3>
+          <p>同一系列的多部作品被归入一个合集，便于连续观看。合集页一般会标注作品顺序，按顺序查找可减少遗漏。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="usage">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>使用说明：从查找到播放</h2>
+          <p class="sub">访问人人影视官网时，几个高频操作的实际路径</p>
+        </div>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <div class="split">
+        <div class="list">
+          <div class="row">
+            <span class="num" aria-hidden="true">1</span>
+            <div>
+              <h4>先确认作品信息</h4>
+              <p>用人人影视官网的检索或分类，先确定片名、年份与季集。名称相近的作品不少，年份能有效避免选错条目。</p>
+            </div>
+          </div>
+          <div class="row">
+            <span class="num" aria-hidden="true">2</span>
+            <div>
+              <h4>核对字幕版本</h4>
+              <p>同一作品常有多版字幕，注意看标注的片源、帧率与语种。字幕与片源不匹配时，播放器可能出现延迟或不同步。</p>
+            </div>
+          </div>
+          <div class="row">
+            <span class="num" aria-hidden="true">3</span>
+            <div>
+              <h4>选择播放方式</h4>
+              <p>网页端适合临时查找，客户端适合长期观看。人人影视官网会在下载区说明客户端的适用平台与版本情况。</p>
+            </div>
+          </div>
+          <div class="row">
+            <span class="num" aria-hidden="true">4</span>
+            <div>
+              <h4>遇到问题先查问答</h4>
+              <p>字幕乱码、时间轴偏移、无法加载等问题在问答区有集中说明。多数情况与编码格式或播放器设置有关。</p>
+            </div>
+          </div>
+        </div>
+        <aside class="side">
+          <h3>访问前值得留意</h3>
+          <ul>
+            <li>字幕文件请按原样保存，避免改扩展名导致播放器无法识别。</li>
+            <li>客户端版本会随平台更新，下载前确认系统与版本对应。</li>
+            <li>同一作品的不同条目可能来自不同字幕组，翻译风格存在差异。</li>
+            <li>资源分类会随整理进度调整，找不到时可换关键词再试。</li>
+          </ul>
+          <p class="note">人人影视官网的信息以字幕与资源整理为主，具体可用内容以页面实际展示为准。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>常见问答</h2>
+          <p class="sub">关于人人影视官网，访问者最常提出的几个问题</p>
+        </div>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>人人影视官网主要提供什么？</summary>
+          <p>以中文字幕整理与影视资源分类为主，同时提供客户端相关说明。访问者多用于查找字幕文件与了解作品条目。</p>
+        </details>
+        <details>
+          <summary>字幕下载后显示乱码怎么办？</summary>
+          <p>多为编码格式不一致所致。可用文本工具将文件转为 UTF-8 后另存，再重新加载字幕；部分播放器也支持手动切换编码。</p>
+        </details>
+        <details>
+          <summary>字幕时间轴对不上怎么处理？</summary>
+          <p>先确认片源版本与帧率是否与字幕标注一致。若版本不同，可在播放器中整体偏移时间轴，或更换对应版本的字幕文件。</p>
+        </details>
+        <details>
+          <summary>客户端和网页端有什么区别？</summary>
+          <p>网页端适合快速查找条目与字幕，客户端更适合固定设备上的连续观看。两者内容方向一致，使用场景不同。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h2>客户端下载</h2>
+          <p>人人影视官网客户端支持在常用设备上查看字幕与资源条目。下载入口将随版本更新调整，请在下载前确认适用平台与版本说明。</p>
+        </div>
+        <a class="btn btn-red" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0d1720"/>
+          <circle cx="32" cy="32" r="16" fill="none" stroke="#e8534a" stroke-width="4"/>
+          <path d="M14 32h36M32 14v36" stroke="#c99a2e" stroke-width="2"/>
+        </svg>
+        人人影视官网
+      </div>
+      <nav class="foot-links" aria-label="页尾导航">
+        <a href="#about">官网概述</a>
+        <a href="#catalog">资源分类</a>
+        <a href="#usage">使用说明</a>
+        <a href="#faq">常见问答</a>
+        <a href="#download">客户端下载</a>
+      </nav>
+    </div>
+    <div class="copy">
+      <span>人人影视官网 · 字幕与影视资源整理入口</span>
+      <span>页面内容以官网实际展示为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
