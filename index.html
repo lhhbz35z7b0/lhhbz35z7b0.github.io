@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>555 电影官网-电影在线观看_最新影片片单_热门电影推荐</title>
+<meta name="description" content="555 电影官网首页，提供电影在线观看入口、最新影片片单与热门电影推荐，按类型、地区与口碑快速找到想看的电影。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101826'/%3E%3Ccircle cx='24' cy='20' r='5' fill='%23f2b544'/%3E%3Ccircle cx='40' cy='20' r='5' fill='%23f2b544'/%3E%3Ccircle cx='24' cy='32' r='5' fill='%23f2b544'/%3E%3Ccircle cx='40' cy='32' r='5' fill='%23f2b544'/%3E%3Cpath d='M18 44h28v6H18z' fill='%23f2b544'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#101826;
+  --ink-2:#1b2536;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --gold:#f2b544;
+  --gold-deep:#d99422;
+  --muted:#5d6675;
+  --line:#e3ded4;
+  --night:#0d1420;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;}
+.wrap{width:min(1160px,92vw);margin:0 auto;}
+
+/* Header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,20,32,.96);
+  color:#f6f4ef;
+  border-bottom:1px solid rgba(242,181,68,.25);
+  backdrop-filter:blur(8px);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:14px 0;
+}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.06rem;letter-spacing:.5px;}
+.logo .mark{
+  width:38px;height:38px;border-radius:10px;
+  background:linear-gradient(145deg,#f2b544,#d99422);
+  display:grid;place-items:center;flex:none;
+}
+.logo .mark svg{width:22px;height:22px;}
+nav.main ul{display:flex;gap:26px;list-style:none;font-size:.94rem;}
+nav.main a{color:#cfd6e2;padding:4px 0;border-bottom:2px solid transparent;transition:.2s;}
+nav.main a:hover{color:var(--gold);border-color:var(--gold);}
+.nav-cta{
+  background:var(--gold);color:var(--ink);font-weight:700;
+  padding:8px 18px;border-radius:999px;font-size:.9rem;white-space:nowrap;
+}
+.nav-cta:hover{background:#ffc95c;}
+
+/* Hero */
+.hero{
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(242,181,68,.20),transparent 70%),
+    linear-gradient(160deg,#0d1420 0%,#16202f 55%,#101826 100%);
+  color:#f6f4ef;
+  padding:64px 0 70px;
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-80px;bottom:-120px;width:420px;height:420px;
+  border:1px solid rgba(242,181,68,.18);border-radius:50%;
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;letter-spacing:2px;color:var(--gold);
+  border:1px solid rgba(242,181,68,.4);border-radius:999px;padding:5px 14px;margin-bottom:20px;
+}
+h1{
+  font-size:clamp(1.9rem,4.2vw,3rem);
+  line-height:1.25;font-weight:800;letter-spacing:1px;margin-bottom:18px;
+}
+h1 .accent{color:var(--gold);}
+.hero p.lead{color:#c3cbd9;font-size:1.02rem;max-width:56ch;margin-bottom:26px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px;}
+.btn-primary{
+  background:linear-gradient(135deg,#f2b544,#e0a02a);color:#101826;
+  font-weight:800;padding:13px 30px;border-radius:12px;font-size:1rem;
+  box-shadow:0 10px 24px -10px rgba(242,181,68,.8);
+}
+.btn-primary:hover{filter:brightness(1.06);}
+.btn-ghost{
+  border:1px solid rgba(255,255,255,.28);color:#e7ecf4;
+  padding:13px 26px;border-radius:12px;font-weight:600;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero-stats{display:flex;gap:34px;flex-wrap:wrap;}
+.hero-stats div strong{display:block;font-size:1.45rem;color:var(--gold);font-weight:800;line-height:1.3;}
+.hero-stats div span{font-size:.82rem;color:#9aa5b6;letter-spacing:.5px;}
+
+/* Ticket / poster card */
+.ticket{
+  background:linear-gradient(180deg,#1e2a3d,#151e2c);
+  border:1px solid rgba(242,181,68,.28);
+  border-radius:20px;padding:22px;
+  box-shadow:0 24px 60px -30px #000;
+}
+.ticket h2{font-size:.92rem;color:#a9b3c4;font-weight:600;letter-spacing:1px;margin-bottom:14px;}
+.reel{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;
+}
+.reel .frame{
+  aspect-ratio:2/3;border-radius:10px;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#2b3850,#1a2334);
+  display:flex;align-items:flex-end;padding:8px;
+  font-size:.7rem;color:#c9d2e0;line-height:1.3;
+}
+.reel .frame:nth-child(2){background:linear-gradient(160deg,#3a2f1c,#1d2534);}
+.reel .frame:nth-child(3){background:linear-gradient(160deg,#243a3a,#1a2334);}
+.reel .frame span{position:relative;z-index:2;}
+.reel .frame::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(60px 90px at 70% 25%,rgba(242,181,68,.35),transparent 70%);
+}
+.ticket .note{font-size:.8rem;color:#8f9aab;border-top:1px dashed rgba(255,255,255,.14);padding-top:12px;}
+
+/* Sections */
+section{padding:66px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:34px;flex-wrap:wrap;}
+.sec-head h2{font-size:clamp(1.35rem,2.6vw,1.8rem);font-weight:800;letter-spacing:.5px;}
+.sec-head h2::before{
+  content:"";display:inline-block;width:8px;height:20px;background:var(--gold);
+  border-radius:3px;margin-right:11px;vertical-align:-2px;
+}
+.sec-head p{color:var(--muted);font-size:.92rem;max-width:52ch;}
+
+/* Filter */
+.filter{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:18px 20px;margin-bottom:30px;
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+}
+.filter label{font-size:.86rem;color:var(--muted);font-weight:600;}
+.filter input[type=search]{
+  flex:1 1 220px;min-width:180px;padding:10px 14px;border:1px solid var(--line);
+  border-radius:10px;font-size:.92rem;background:#fbfaf7;color:var(--ink);
+  font-family:inherit;
+}
+.filter input[type=search]:focus{outline:2px solid rgba(242,181,68,.6);border-color:var(--gold);}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{
+  border:1px solid var(--line);background:#fbfaf7;color:var(--ink);
+  padding:7px 15px;border-radius:999px;font-size:.85rem;cursor:pointer;
+  font-family:inherit;transition:.18s;
+}
+.chip:hover{border-color:var(--gold-deep);color:var(--gold-deep);}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.empty-tip{display:none;color:var(--muted);font-size:.9rem;padding:18px 0;}
+
+/* Movie grid */
+.movies{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.movie{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.movie:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(16,24,38,.55);}
+.movie .poster{
+  height:150px;position:relative;
+  background:linear-gradient(150deg,#1b2536,#2e3b52);
+  display:flex;align-items:flex-start;justify-content:space-between;padding:14px;
+}
+.movie:nth-child(2n) .poster{background:linear-gradient(150deg,#3a2c17,#1e2736);}
+.movie:nth-child(3n) .poster{background:linear-gradient(150deg,#1d3535,#1a2334);}
+.movie .poster .tag{
+  background:rgba(242,181,68,.92);color:#101826;font-size:.72rem;font-weight:800;
+  padding:3px 10px;border-radius:999px;letter-spacing:.5px;
+}
+.movie .poster .score{color:#fff;font-size:.82rem;font-weight:700;background:rgba(0,0,0,.35);padding:3px 9px;border-radius:8px;}
+.movie .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.movie h3{font-size:1.02rem;font-weight:800;letter-spacing:.5px;}
+.movie .meta{font-size:.78rem;color:var(--muted);letter-spacing:.3px;}
+.movie p{font-size:.875rem;color:#414b5a;flex:1;}
+.movie .watch{
+  font-size:.84rem;font-weight:700;color:var(--gold-deep);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.movie .watch::after{content:"→";transition:.2s;}
+.movie:hover .watch::after{transform:translateX(4px);}
+
+/* Two column blocks */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start;}
+.prose h2{font-size:clamp(1.3rem,2.4vw,1.65rem);font-weight:800;margin-bottom:16px;}
+.prose p{color:#3d4756;margin-bottom:14px;font-size:.96rem;}
+.prose p strong{color:var(--ink);}
+.steps{list-style:none;display:grid;gap:14px;}
+.steps li{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;display:flex;gap:14px;
+}
+.steps li .num{
+  flex:none;width:30px;height:30px;border-radius:9px;background:var(--ink);color:var(--gold);
+  display:grid;place-items:center;font-weight:800;font-size:.9rem;
+}
+.steps li h3{font-size:.96rem;font-weight:800;margin-bottom:3px;}
+.steps li p{font-size:.86rem;color:var(--muted);}
+
+/* Lists section */
+.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 22px;
+}
+.panel .ico{
+  width:42px;height:42px;border-radius:12px;background:#fdf3dd;color:var(--gold-deep);
+  display:grid;place-items:center;margin-bottom:14px;
+}
+.panel h3{font-size:1.02rem;font-weight:800;margin-bottom:8px;}
+.panel p{font-size:.88rem;color:var(--muted);}
+.panel ul{margin-top:12px;list-style:none;font-size:.86rem;color:#3d4756;display:grid;gap:6px;}
+.panel ul li::before{content:"·";color:var(--gold-deep);font-weight:900;margin-right:8px;}
+
+/* Download band */
+.band{
+  background:linear-gradient(135deg,#101826,#1d2a3c);
+  color:#eef2f7;border-radius:22px;padding:40px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  border:1px solid rgba(242,181,68,.3);
+}
+.band h2{font-size:1.35rem;font-weight:800;margin-bottom:8px;}
+.band p{color:#aab4c4;font-size:.9rem;max-width:56ch;}
+.band .btn-primary{pointer-events:none;opacity:.92;display:inline-flex;align-items:center;gap:8px;}
+
+/* FAQ */
+.faq{display:grid;gap:14px;max-width:880px;}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;
+}
+details summary{cursor:pointer;font-weight:700;font-size:.96rem;list-style:none;}
+details summary::-webkit-details-marker{display:none;}
+details summary::before{content:"+";color:var(--gold-deep);font-weight:900;margin-right:10px;}
+details[open] summary::before{content:"–";}
+details p{font-size:.89rem;color:var(--muted);margin-top:10px;padding-left:22px;}
+
+/* Footer */
+footer{
+  background:var(--night);color:#a8b2c2;padding:48px 0 30px;font-size:.86rem;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:30px;}
+footer .logo{color:#fff;margin-bottom:14px;font-size:1rem;}
+footer p{color:#8b96a7;max-width:44ch;line-height:1.8;}
+footer h4{color:#fff;font-size:.9rem;margin-bottom:12px;letter-spacing:.5px;}
+footer ul{list-style:none;display:grid;gap:8px;}
+footer a:hover{color:var(--gold);}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:18px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.8rem;color:#7b8697;
+}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:34px;}
+  .movies,.panels{grid-template-columns:repeat(2,1fr);}
+  .split{grid-template-columns:1fr;gap:30px;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  nav.main{display:none;}
+}
+@media(max-width:600px){
+  .hero{padding:44px 0 52px;}
+  section{padding:48px 0;}
+  .movies,.panels{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  .band{padding:28px 22px;}
+  .hero-stats{gap:22px;}
+  .sec-head{margin-bottom:26px;}
+  .nav-inner{padding:12px 0;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#101826" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="7" cy="6" r="1.8"/><circle cx="12" cy="6" r="1.8"/><circle cx="17" cy="6" r="1.8"/>
+          <circle cx="7" cy="11" r="1.8"/><circle cx="12" cy="11" r="1.8"/><circle cx="17" cy="11" r="1.8"/>
+          <path d="M5 16h14v3H5z"/>
+        </svg>
+      </span>
+      555 电影官网
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#movies">影片片单</a></li>
+        <li><a href="#howto">观影路径</a></li>
+        <li><a href="#guides">分类导览</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <a href="#movies" class="nav-cta">进入片单</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">在线观影 · 片单入口</span>
+        <h1>555 电影官网</h1>
+        <p class="lead">555 电影官网把选片与在线观看放在同一处：首页汇集近期热度较高的影片、按类型与地区整理好的片单，以及清晰的播放入口。不必反复跳转，进入页面即可从片单中找到下一部想看的电影。</p>
+        <div class="hero-actions">
+          <a href="#movies" class="btn-primary">浏览影片片单</a>
+          <a href="#howto" class="btn-ghost">了解观影流程</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>6</strong><span>首页精选影片</span></div>
+          <div><strong>5</strong><span>类型筛选标签</span></div>
+          <div><strong>3</strong><span>选片导览方向</span></div>
+        </div>
+      </div>
+
+      <aside class="ticket" aria-label="今日放映单">
+        <h2>今日推荐位</h2>
+        <div class="reel">
+          <div class="frame"><span>剧情<br>长片</span></div>
+          <div class="frame"><span>悬疑<br>推理</span></div>
+          <div class="frame"><span>纪录<br>影像</span></div>
+        </div>
+        <p class="note">片单按上架与热度排列，点击任意影片可查看剧情简介与播放入口。</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="movies">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>首页影片片单</h2>
+        <p>在 555 电影官网的片单区，可按片名搜索或按类型筛选，卡片上标注了年份、地区与一段简短的看点说明。</p>
+      </div>
+
+      <div class="filter" role="search">
+        <label for="q">片名搜索</label>
+        <input id="q" type="search" placeholder="输入片名或关键词，例如：夜行" autocomplete="off">
+        <div class="chips" id="chips">
+          <button class="chip active" data-type="all" type="button">全部</button>
+          <button class="chip" data-type="剧情" type="button">剧情</button>
+          <button class="chip" data-type="悬疑" type="button">悬疑</button>
+          <button class="chip" data-type="喜剧" type="button">喜剧</button>
+          <button class="chip" data-type="纪录" type="button">纪录</button>
+          <button class="chip" data-type="动画" type="button">动画</button>
+        </div>
+      </div>
+
+      <div class="movies" id="movieList">
+        <article class="movie" data-type="剧情" data-title="长夜将明">
+          <div class="poster"><span class="tag">剧情</span><span class="score">8.6</span></div>
+          <div class="body">
+            <h3>长夜将明</h3>
+            <p class="meta">2023 · 中国大陆 · 118 分钟</p>
+            <p>一座旧厂区里的三户人家，在搬迁通知贴出的那个冬天各自做出选择，故事以四季为章节缓慢展开。</p>
+            <a href="#movies" class="watch">查看详情</a>
+          </div>
+        </article>
+
+        <article class="movie" data-type="悬疑" data-title="雨夜回声">
+          <div class="poster"><span class="tag">悬疑</span><span class="score">8.2</span></div>
+          <div class="body">
+            <h3>雨夜回声</h3>
+            <p class="meta">2024 · 中国香港 · 105 分钟</p>
+            <p>连续七天的暴雨里，一段旧录音被反复播放，侦探要在证词矛盾中找出唯一吻合的时间点。</p>
+            <a href="#movies" class="watch">查看详情</a>
+          </div>
+        </article>
+
+        <article class="movie" data-type="喜剧" data-title="周末合伙人">
+          <div class="poster"><span class="tag">喜剧</span><span class="score">7.8</span></div>
+          <div class="body">
+            <h3>周末合伙人</h3>
+            <p class="meta">2023 · 中国大陆 · 96 分钟</p>
+            <p>两个性格相反的邻居被迫合伙经营一家小店，从互相拆台到勉强配合，笑点来自生活细节。</p>
+            <a href="#movies" class="watch">查看详情</a>
+          </div>
+        </article>
+
+        <article class="movie" data-type="纪录" data-title="海岸线的四季">
+          <div class="poster"><span class="tag">纪录</span><span class="score">8.9</span></div>
+          <div class="body">
+            <h3>海岸线的四季</h3>
+            <p class="meta">2022 · 中国大陆 · 84 分钟</p>
+            <p>跟拍三个沿海小镇的渔民家庭，记录休渔期与开渔期的日常节奏，画面以自然光为主。</p>
+            <a href="#movies" class="watch">查看详情</a>
+          </div>
+        </article>
+
+        <article class="movie" data-type="动画" data-title="纸飞机旅行">
+          <div class="poster"><span class="tag">动画</span><span class="score">8.4</span></div>
+          <div class="body">
+            <h3>纸飞机旅行</h3>
+            <p class="meta">2024 · 中国大陆 · 92 分钟</p>
+            <p>一只纸飞机从城市窗口出发，穿过田野与山谷，用一条路线串起许多短暂的相遇。</p>
+            <a href="#movies" class="watch">查看详情</a>
+          </div>
+        </article>
+
+        <article class="movie" data-type="剧情" data-title="旧戏台">
+          <div class="poster"><span class="tag">剧情</span><span class="score">8.0</span></div>
+          <div class="body">
+            <h3>旧戏台</h3>
+            <p class="meta">2021 · 中国大陆 · 127 分钟</p>
+            <p>一位老艺人坚持在即将拆除的戏台上完成最后一场演出，剧本围绕排练过程逐日推进。</p>
+            <a href="#movies" class="watch">查看详情</a>
+          </div>
+        </article>
+      </div>
+      <p class="empty-tip" id="emptyTip">没有匹配的影片，换一个片名或类型再试试。</p>
+    </div>
+  </section>
+
+  <section id="howto">
+    <div class="wrap split">
+      <div class="prose">
+        <h2>在 555 电影官网选片与观看</h2>
+        <p>访问 555 电影官网的目的通常很直接：想找一部能立刻看的电影。<strong>首页把片单放在最靠前的位置</strong>，筛选与搜索都在片单上方，打开页面就能开始挑。</p>
+        <p>片单卡片上的信息是判断依据：类型决定基调，年份与地区帮助区分版本，评分与简介给出参考尺度。看完简介再决定是否播放，比逐条点开更省时间。</p>
+        <p>如果暂时没有明确目标，可以从下面的三个导览方向入手：按类型、按观看时长、按口碑排序。三条路径指向同一份片单，只是切入角度不同。</p>
+        <p>需要说明的是，555 电影官网的片单会随上架情况调整，首页展示的是当前整理出的精选条目，具体可看内容以片单页实际列表为准。</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <span class="num">1</span>
+          <div><h3>确定类型或片名</h3><p>用筛选标签缩小范围，或直接在搜索框输入记得的关键词。</p></div>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <div><h3>看简介与基本信息</h3><p>年份、地区、时长与看点说明一起看，避免选到不合适的版本。</p></div>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <div><h3>进入播放入口</h3><p>在影片详情处开始播放，播放页与片单页之间可以随时返回重选。</p></div>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <div><h3>收藏想看的内容</h3><p>把感兴趣的影片记录下来，下次进入 555 电影官网可直接续看。</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="guides" style="background:#efece4;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>三条选片导览</h2>
+        <p>不同时间的观看需求不一样，导览按使用场景划分，每条都对应片单中的具体条目。</p>
+      </div>
+      <div class="panels">
+        <div class="panel">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+          </div>
+          <h3>按类型挑</h3>
+          <p>想要明确的情绪走向时，从类型标签开始最快。</p>
+          <ul>
+            <li>剧情：长夜将明、旧戏台</li>
+            <li>悬疑：雨夜回声</li>
+            <li>喜剧：周末合伙人</li>
+            <li>纪录与动画：海岸线的四季、纸飞机旅行</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <h3>按时间挑</h3>
+          <p>片长差异明显，空闲时间决定可选范围。</p>
+          <ul>
+            <li>90 分钟以内：海岸线的四季（84 分钟）</li>
+            <li>90–100 分钟：周末合伙人、纸飞机旅行</li>
+            <li>100–120 分钟：雨夜回声、长夜将明</li>
+            <li>两小时以上：旧戏台（127 分钟）</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8z"/></svg>
+          </div>
+          <h3>按口碑挑</h3>
+          <p>片单内的评分由高到低排列，可作快速参考。</p>
+          <ul>
+            <li>海岸线的四季 8.9</li>
+            <li>长夜将明 8.6</li>
+            <li>纸飞机旅行 8.4</li>
+            <li>雨夜回声 8.2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>把 555 电影官网加入常用入口</h2>
+          <p>桌面端与手机端均可直接访问，片单、筛选与播放入口保持一致，方便下次快速回到上次浏览的位置。</p>
+        </div>
+        <a href="#" class="btn-primary" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p>关于片单、筛选与观看入口的常见疑问，集中在这里说明。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>555 电影官网首页的片单多久更新一次？</summary>
+          <p>片单按上架与热度定期整理，首页展示的是当前精选条目。具体可看内容与排序以片单页实际列表为准，建议以页面显示为准进行选择。</p>
+        </details>
+        <details>
+          <summary>搜索不到想看的影片怎么办？</summary>
+          <p>可以先用类型标签缩小范围，再尝试更换片名的关键词，例如只输入片名中的两个字。若仍无结果，说明该影片暂不在当前片单中。</p>
+        </details>
+        <details>
+          <summary>评分是平台打分还是观众评价？</summary>
+          <p>片单中的评分为该影片在站内展示的参考分数，用于同片单内的横向比较，不代表外部平台的评分体系。</p>
+        </details>
+        <details>
+          <summary>手机上观看的体验和电脑一样吗？</summary>
+          <p>页面在手机端采用单列布局，筛选、片单与播放入口的位置顺序保持一致，可直接在移动浏览器中完成选片与播放。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#101826" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="7" cy="6" r="1.8"/><circle cx="12" cy="6" r="1.8"/><circle cx="17" cy="6" r="1.8"/>
+              <circle cx="7" cy="11" r="1.8"/><circle cx="12" cy="11" r="1.8"/><circle cx="17" cy="11" r="1.8"/>
+              <path d="M5 16h14v3H5z"/>
+            </svg>
+          </span>
+          555 电影官网
+        </div>
+        <p>555 电影官网以片单为核心组织首页内容，按类型、时长与口碑提供选片路径，并给出明确的播放入口。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#movies">影片片单</a></li>
+          <li><a href="#howto">观影路径</a></li>
+          <li><a href="#guides">分类导览</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>片单入口</h4>
+        <ul>
+          <li><a href="#movies">剧情长片</a></li>
+          <li><a href="#movies">悬疑推理</a></li>
+          <li><a href="#movies">纪录影像</a></li>
+          <li><a href="#movies">动画电影</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 555 电影官网 · 首页内容仅作影片信息展示</span>
+      <span>片单与评分随页面整理更新</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var list = document.getElementById('movieList');
+  var cards = Array.prototype.slice.call(list.querySelectorAll('.movie'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('#chips .chip'));
+  var input = document.getElementById('q');
+  var empty = document.getElementById('emptyTip');
+  var activeType = 'all';
+
+  function apply(){
+    var q = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(card){
+      var typeOk = activeType === 'all' || card.getAttribute('data-type') === activeType;
+      var title = (card.getAttribute('data-title') || '').toLowerCase();
+      var text = card.textContent.toLowerCase();
+      var qOk = !q || title.indexOf(q) > -1 || text.indexOf(q) > -1;
+      var ok = typeOk && qOk;
+      card.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  }
+
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeType = btn.getAttribute('data-type');
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+})();
+</script>
+
+</body>
+</html>
